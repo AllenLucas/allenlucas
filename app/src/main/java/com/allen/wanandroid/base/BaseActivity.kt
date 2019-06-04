@@ -10,11 +10,13 @@ abstract class BaseActivity : AppCompatActivity(){
     abstract fun getLayout(): Int
     abstract fun initView()
     abstract fun initListener()
+    abstract fun initData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayout())
         initView()
         initListener()
+        initData()
     }
 }
