@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_activity"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        tools:openDrawer="start"
         android:layout_height="match_parent">
 
     <fragment
@@ -10,7 +12,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            app:defaultNavHost="false"
+            app:defaultNavHost="true"
+            android:fitsSystemWindows="true"
             app:navGraph="@navigation/nav"/>
 
-</FrameLayout>
+    <com.google.android.material.navigation.NavigationView
+            android:id="@+id/activity_navigation_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu="@menu/home_menu"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/head_activity_drawer"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
